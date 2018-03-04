@@ -22,6 +22,9 @@ h2{
 h3{
 	font-size: 21px;
 }
+
+h5{ font-size: 20px;
+color:#fffcfc; }
 p{
 	font-size: 20px;
 	font-style: italic;
@@ -521,7 +524,7 @@ section{
 	color: #bfc1c1;
 }
 .footer p{
-	font-size: 10px;
+	font-size: 5px;
 	color: #fff;
 	margin-bottom: 0;
 }
@@ -600,3 +603,10 @@ max-height:100%;*/}
     position: relative;
     min-height: 659px;
 }
+
+.container-survey{
+	margin:auto;
+	text-align: center;
+	margin-top: 15%;
+}
+
