@@ -27,7 +27,6 @@
         <!-- SCRIPTS AND LINKS -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
-    <link rel="stylesheet" href="css/reset.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
 
@@ -39,15 +38,15 @@
                 <ul>
                     <a href="index.html"><li>home</li></a>
                     <a href="#about"><li>About</li></a>
-                    <a href="survey.html"><li>Where should you go next?</li></a><br>
+                    <a href="#expertise"><li>Where should you go next?</li></a>
                     <a href="#workstation"><li> Popular vacations spots</li></a>
-                    <a href="business/index.html"><li>Business Trip</li></a>
-                    <a href="elements.html"><li>Log in</li></a><br>
+                    <a href="#team"><li>Ready to book?</li></a>
+                    <a href="#contact"><li>Contact</li></a>
+                    <a href="elements.html"><li>Log in</li></a>
                 </ul>
             </div>
         </div>
-        <div class="main">
-            <header class="bg-img header">
+        <div class="main element  header bg-img">
             <nav class="navbar navbar-default navbar-Dérive">
                 <div class="container">
                     <div class="navigation-bar">
@@ -68,49 +67,46 @@
             </nav>
 <!-- survey -->
 <main>
-
-    <div class="container-survey">
+    <div class="container">
       <div class="row">
         <div class="col s12 z-depth-5 mainpanel">
           <div id="mainpanel-content">
             <h1>Survey Questions</h1>
-            <br>
-            <br>
             <div class="divider"></div>
             <div id="q1_div">
-                <h5>What does your ideal vacation entail?</h5>
+                <h3>What does your ideal vacation entail?</h3>
                 <select class= "displayHidden" id="q1">
                 <option value="" selected>Select your answer</option>
-                <option value="1">Relaxation</option>
+                <option value="1">Relaxtion</option>
                 <option value="2">Excitement</option>
                 <option value="3">Culture</option>
-              </select><br><br>
+              </select>
               <button type="button" class="btn btn-primary btn-md" id="nextButton1">Next!</button>
             </div>
 
             <div id="q2_div">
-                <h5>What kind of weather do you like?</h5>
+                <h3>What kind of weather do you like?</h3>
                 <select class= "displayHidden" id="q2">
                 <option value="" selected>Select your answer</option>
                 <option value="1">Cold</option>
                 <option value="2">Warm</option>
                 <option value="3">Hot</option>
-              </select><br><br>
+              </select>
               <button type="button" class="btn btn-primary btn-md" id="nextButton2">Next!</button>
             </div>
 
             <div id="q3_div">
-                <h5>What is your age range?</h5>
+                <h3>What is your age range?</h3>
                 <select class= "displayHidden" id="q3">
                 <option value="" selected>Select your answer</option>
                 <option value="1">19-29</option>
                 <option value="2">30-39</option>
                 <option value="3">40-49</option>
-                </select><br><br>
+                </select>
                 <button type="button" class="btn btn-primary btn-md" id="nextButton3">Next!</button>
             </div>  
 
-            <div id="finalize"><br><br>
+            <div id="finalize">
                     <button type="submit" class="btn btn-primary btn-md" id="dobtn">Find my Vacation!</button>
             </div>
         
@@ -120,7 +116,7 @@
       </div>
 
       <div id="goAgain" class="jumbotron jumbotron-fluid">
-        <div class="container"><br><br>
+        <div class="container">
           <h1 class="display-3">Would you like to take the quiz again?</h1>
           <a href="/survey"><button type="button" class="btn btn-outline-primary btn-lg">Go to the survey</button></a>                      
         </div>
@@ -180,8 +176,9 @@
                     console.log("data 3",data[3]);
                     $("#mainData").hide();
                     $("#myModal").show();
-                    $("#dataResults").append('<a href="'+data[0]+'">Click Here to View More information</a>');
-                    $("#dataResults").append('<img src="' + data[1] +'" width="300">');
+                    $("#dataResults").html('<h1><font color="black">Click the Photo to View Your Vacation</font></h1>');
+                    $("#dataResults").append('<a href="'+data[0]+'"><img src="' + data[1] +'" width="300"></a>');
+                    // $("#dataResults").append('<img src="' + data[1] +'" width="300">');
                     
                     // Get the modal
                     var modal = document.getElementById('myModal');
@@ -206,8 +203,6 @@
                 });
         });
     </script>
-    </div>
-
     <footer class="footer">
                 <div class="container">
                     <div class="row">
@@ -217,12 +212,8 @@
                     </div>
                 </div>
             </footer>
-        
+        </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
-        crossorigin="anonymous"></script>
         <script src="assets/js/jquery-3.1.1.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/owl.carousel.min.js"></script>
