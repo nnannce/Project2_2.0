@@ -81,42 +81,38 @@
                             <div class="row form-container">
                                 <form action="#" method="post" class="form-inline" accept-charset="utf-8">
                                   <fieldset>
-                                    <div class="row">
-                                      <div class="col-sm-12 btn-group" data-toggle="buttons">
-                                        <label class="btn btn-radio btn-cift active">
-                                          <input class="this-is-checked" name="yonunu_sec" id="gidis-donus" value="gidis-donus" type="radio" checked> Round-Trip
-                                        </label>
-                                        <label class="btn btn-radio btn-tek-yon">
-                                          <input class="this-is-checked" name="yonunu_sec" id="tek-yon" value="tek-yon" type="radio"> One Way
-                                        </label>
-                                      </div>
-                                    </div>
                                   </fieldset>
                                   <fieldset>
                                     <div class="row">
                                       <div class="col-sm-12 form-group">
                                         <div class="col-lg-2 col-md-6 col-xs-12" style="padding: 0;">
-                                          <label class="sr-only" for="kalkis-yeri">Departure Places</label>
-                                          <input type="text" class="form-control" style="width: 100%;" id="kalkis-yeri" name="kalkis-yeri" placeholder="Departure">
+                                                <p name="FROM" id="FROM" value="FROM"> FROM </p>
+                                          <label class="sr-only" for="departure">Departure Places</label>
+                                          <input type="text" class="form-control" style="width: 100%;" id="from" name="departure" placeholder="DFW">
                                         </div>
                                         <div class="col-lg-2 col-md-6 col-xs-12" style="padding: 0">
-                                          <label class="sr-only" for="inis-yeri">Landing Place</label>
-                                          <input type="text" class="form-control date" style="width: 100%" id="inis-yeri" name="inis-yeri" placeholder="Landing">
+                                                <p name="TO" id="TO" value="TO"> TO </p>
+                                          <label class="sr-only" for="landing">Landing Place</label>
+                                          <input type="text" class="form-control date" style="width: 100%" id="to" name="landing" placeholder="Airport">
                                         </div>
                                         <div class="col-lg-2 col-md-6 col-xs-12 date" style="padding: 0">
-                                          <label class="sr-only" for="gidis-tarihi">Date of Departure</label>
-                                          <input type="text" class="form-control" style="width: 100%" id="gidis-tarihi" name="gidis-tarihi" placeholder="Date">
+                                                <p name="DEPART" id="DEPART" value="DEPART"> DEPART </p>
+                                          <label class="sr-only" for="departure_date">Date of Departure</label>
+                                          <input type="date" class="form-control" style="width: 100%" id="departure_date" name="departure_date" placeholder="YYYY/MM/DD">
                                         </div>
                                         <div class="col-lg-2 col-md-6 col-xs-12 date" style="padding: 0">
-                                          <label class="sr-only" for="gidis-tarihi">Date of Return</label>
-                                          <input type="text" class="form-control" style="width: 100%" id="donus-tarihi" name="donus-tarihi" placeholder="Return">
+                                                <p name="RETURN" id="RETURN" value="RETURN"> RETURN </p>
+                                          <label class="sr-only" for="return_date">Date of Return</label>
+                                          <input type="date" class="form-control" style="width: 100%" id="return_date" name="return_date" placeholder="YYYY/MM/DD">
                                         </div>
                                         <div id="popup-opener" class="col-lg-2 col-md-6 col-xs-12" style="padding: 0">
-                                          <label class="sr-only" for="gidis-tarihi">Number of People</label>
-                                          <input type="text" class="form-control" style="width: 100%" id="kisi-sayisi" name="kisi-sayisi" placeholder="Number" >
+                                                <p name="NUMBER" id="NUMBER" value="NUMBER"> PASSENGERS </p>
+                                          <label class="sr-only" for="number_of_people">Number of People</label>
+                                          <input type="number" class="form-control" style="width: 100%" id="number_of_people" name="number_of_people" value="0" >
                                         </div>
                                         <div class="col-lg-2 col-md-6 col-xs-12" style="padding: 0">
-                                          <button type="submit" class="btn btn-submit" style="width: 100%"><i class="fa fa-search"></i></button>
+                                            <br><br>
+                                            <button type="submit" class="btn btn-default" id="run-search"><i class="fa fa-search"></i> Search</button>
                                         </div>
                                       </div>
                                     </div>
@@ -126,118 +122,18 @@
                                       <div class="col-lg-12">
                                         <div class="checkbox">
                                           <label class="check-label">
-                                            <input type="checkbox" id="aktarmasiz"> Nonstop
+                                            <input type="checkbox" id="nonstop"> Nonstop
                                           </label>
                                         </div>
                                         <div class="checkbox">
                                           <label class="check-label">
-                                            <input type="checkbox" id="iptal-edilebilir"> Cancelable
+                                            <input type="checkbox" id="cancelable"> Cancelable
                                           </label>
                                         </div>
                                       </div>
                                     </div>
                                   </fieldset>
                                 </form>
-                                <div class="row-passengers" style="display: none;">
-                                  <div class="box-with-arrow">
-                                    <div class="row selectors">
-                                      <div class="select-list">
-                                        <select id="flight-class" name="flight-class">
-                                          <option value="0">Economic</option>
-                                          <option value="1">Business</option>
-                                          <option value="2">Comfort</option>
-                                          <option value="3">First Class</option>
-                                        </select>
-                                      </div>
-                                      <div class="passengers">
-                                        <div class="row passenger-list valign-wrapper">
-                                          <div class="col-lg-6 col-xs-12">
-                                            <p class="first-line">Adult</p>
-                                            <p class="second-line">(18+)</p>
-                                          </div>
-                                          <div class="col-lg-6 col-xs-12">
-                                            <div class="input-group">
-                                              <span class="input-group-btn">
-                                        <button type="button" class="btn btn-passenger" data-value="decrease" data-target="#adult-passenger" data-toggle="spinner">
-                                          <span class="glyphicon glyphicon-minus"></span>
-                                              </button>
-                                              </span>
-                                              <input type="text" data-ride="spinner" id="adult-passenger" class="spinner-input form-control input-number" value="1" readonly="readonly">
-                                              <span class="input-group-btn">
-                                        <button type="button" class="btn btn-passenger" data-value="increase" data-target="#adult-passenger" data-toggle="spinner">
-                                          <span class="glyphicon glyphicon-plus"></span>
-                                              </button>
-                                              </span>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="row passenger-list valign-wrapper">
-                                          <div class="col-lg-6 col-xs-12">
-                                            <p class="first-line">Student</p>
-                                            <p class="second-line">(12-24)</p>
-                                          </div>
-                                          <div class="col-lg-6 col-xs-12">
-                                            <div class="input-group">
-                                              <span class="input-group-btn">
-                                        <button type="button" class="btn btn-passenger" data-value="decrease" data-target="#student-passenger" data-toggle="spinner">
-                                          <span class="glyphicon glyphicon-minus"></span>
-                                              </button>
-                                              </span>
-                                              <input type="text" data-ride="spinner" id="student-passenger" class="spinner-input form-control input-number" value="0" readonly="readonly">
-                                              <span class="input-group-btn">
-                                        <button type="button" class="btn btn-passenger" data-value="increase" data-target="#student-passenger" data-toggle="spinner">
-                                          <span class="glyphicon glyphicon-plus"></span>
-                                              </button>
-                                              </span>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="row passenger-list valign-wrapper">
-                                          <div class="col-lg-6 col-xs-12">
-                                            <p class="first-line">Child</p>
-                                            <p class="second-line">(2-11)</p>
-                                          </div>
-                                          <div class="col-lg-6 col-xs-12">
-                                            <div class="input-group">
-                                              <span class="input-group-btn">
-                                        <button type="button" class="btn btn-passenger" data-value="decrease" data-target="#child-passenger" data-toggle="spinner">
-                                          <span class="glyphicon glyphicon-minus"></span>
-                                              </button>
-                                              </span>
-                                              <input type="text" data-ride="spinner" id="child-passenger" class="spinner-input form-control input-number" value="0" readonly="readonly">
-                                              <span class="input-group-btn">
-                                        <button type="button" class="btn btn-passenger" data-value="increase" data-target="#child-passenger" data-toggle="spinner">
-                                          <span class="glyphicon glyphicon-plus"></span>
-                                              </button>
-                                              </span>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="row passenger-list valign-wrapper">
-                                          <div class="col-lg-6 col-xs-12">
-                                            <p class="first-line">Baby</p>
-                                            <p class="second-line">(0-2)</p>
-                                          </div>
-                                          <div class="col-lg-6 col-xs-12">
-                                            <div class="input-group">
-                                              <span class="input-group-btn">
-                                        <button type="button" class="btn btn-passenger" data-value="decrease" data-target="#baby-passenger" data-toggle="spinner">
-                                          <span class="glyphicon glyphicon-minus"></span>
-                                              </button>
-                                              </span>
-                                              <input type="text" data-ride="spinner" id="baby-passenger" class="spinner-input form-control input-number" value="0" readonly="readonly">
-                                              <span class="input-group-btn">
-                                        <button type="button" class="btn btn-passenger" data-value="increase" data-target="#baby-passenger" data-toggle="spinner">
-                                          <span class="glyphicon glyphicon-plus"></span>
-                                              </button>
-                                              </span>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="submit-icon">
-                                        <a class="btn btn-success" style="width: 100%; border-radius: 0; margin-top: 10px;">Save</a>
-                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -249,6 +145,21 @@
                     </div>
                 </div>
             </section>
+            <div class="row">
+                <div class="col-sm-3">             
+            <h4 class="flight-search"></h4>
+                </div>
+                <div class="col-sm-3">             
+            <h5 class="flight-search"></h5>
+                </div>
+                 <div class="col-sm-3">             
+             <h6 class="flight-search"></h6>
+                 </div>
+                 <div class="col-sm-3">             
+             <h3 class="flight-search"></h3>
+                 </div> 
+            </div>
+
 
             <br><br>
            
@@ -285,13 +196,13 @@
 
             <br><br>
 
-            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+            <input id="pac-input" class="controls" type="text" placeholder="Search Box" style="width:200px">
 <div id="map" style="height: 300px"></div>
 
 <div class="container search-results-container hidden">
   <br> <br>
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-sm-12">
             <div class="row search-results">
 
             </div>
@@ -310,7 +221,7 @@
                             <input type="text" class="form-control" value="LOCATION: "style = "width:565px" >
                         </div>
                         <div class="col-sm-6">
-                            <input type="date" class="form-control" value="DATE: " style = "width:600px">
+                            <input type="text" class="form-control" value="DATE: " style = "width:600px">
                         </div>
                         </div>
                         <div class="row">
@@ -397,7 +308,7 @@
       
           function initAutocomplete() {
               var map = new google.maps.Map(document.getElementById('map'), {
-                  center: {lat: -33.8688, lng: 151.2195},
+                  center: {lat: 32.7767, lng: -96.7970},
                   zoom: 13,
                   mapTypeId: 'roadmap'
               });
@@ -505,12 +416,12 @@
                                   '</div>' +
                                   '<div class="caption"> ' +
                                   '<h3>' + hotel.name + '</h3> ' +
+                                  '<p>' + "Rating: " +  hotel.rating + '</p>' +
                                   '<p>' + hotel.vicinity + '</p> ' +
                                   '</div> ' +
                                   '</div> ' +
                                   '</div> ';
                               $('.search-results').append(html);
-      
                               setTimeout(function () {
                                   var hotelMap = new google.maps.Map(document.getElementById(hotel.id + '-map'), {
                                       center: {lat: -33.8688, lng: 151.2195},
@@ -552,6 +463,7 @@
                       }
                   });
               }
+                
       
           }
       
@@ -567,5 +479,6 @@
         <script src="https://use.fontawesome.com/55b73bf748.js"></script>
         <script src="assets/js/jquery.magnific-popup.js"></script>
         <script src="assets/js/script.js"></script>
+        <script src="assets/js/flight.js"></script>
     </body>
 </html>
