@@ -16,7 +16,9 @@
 
         <link href="assets/css/magnific-popup.css" rel="stylesheet">
 
-        <link href="assets/css/style.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+        <link href="assets/css/businessstyle.css" rel="stylesheet">
 
 
         <!--[if lt IE 9]>
@@ -28,13 +30,13 @@
         <div id="menu-item" class="menu-item hide-menu">
             <div class="container">
                 <ul>
-                    <a href="../Derive/index.html"><li>Home</li></a>
-                    <a href="index.html"><li>Business Trip</li></a>
+                    <a href="index.html"><li>Home</li></a>
                     <a href="#flight"><li>Flights</li></a>
                     <a href="#expertise"><li> Hotels</li></a>
                     <a href="#about"><li>Create a Budget</li></a>
-                    <a href="#contact"><li>Contact</li></a>
-                    <a href="../Derive/elements.html"><li>Log in</li></a>
+                    <a href="elements.html"><li>Contact</li></a>
+                    <a href="login.html"><li>Log in</li></a>
+                    <a href="register.html"><li>Register</li></a>
                 </ul>
             </div>
         </div>
@@ -117,22 +119,6 @@
                                       </div>
                                     </div>
                                   </fieldset>
-                                  <fieldset>
-                                    <div class="row">
-                                      <div class="col-lg-12">
-                                        <div class="checkbox">
-                                          <label class="check-label">
-                                            <input type="checkbox" id="nonstop"> Nonstop
-                                          </label>
-                                        </div>
-                                        <div class="checkbox">
-                                          <label class="check-label">
-                                            <input type="checkbox" id="cancelable"> Cancelable
-                                          </label>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </fieldset>
                                 </form>
                                     </div>
                                   </div>
@@ -146,6 +132,20 @@
                 </div>
             </section>
             <div class="row">
+                    <div class="col-sm-12">  
+                    <div id= "preloader" class="preloader-2">
+                            <span class="line line-1"></span>
+                            <span class="line line-2"></span>
+                            <span class="line line-3"></span>
+                            <span class="line line-4"></span>
+                            <span class="line line-5"></span>
+                            <span class="line line-6"></span>
+                            <span class="line line-7"></span>
+                            <span class="line line-8"></span>
+                            <span class="line line-9"></span>
+                            <div>Loading</div>
+                          </div>
+                          </div>
                 <div class="col-sm-3">             
             <h4 class="flight-search"></h4>
                 </div>
@@ -252,7 +252,7 @@
 
                         <div class="col-sm-12">
                             <button type="submit" class="btn Dérive-btn mr60">SAVE</button>
-                            <button type="reset" class="btn Dérive-btn">VIEW ALL BUDGETS</button>
+                            <button type="view" class="btn Dérive-btn">VIEW ALL BUDGETS</button>
                         </div>
                     </div>
                 </form>
@@ -301,7 +301,7 @@
           // This example requires the Places library. Include the libraries=places
           // parameter when you first load the API. For example:
           // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-      
+
           var places = [];
           var nearbyPlaces;
       
@@ -415,7 +415,7 @@
                                   '</div> ' +
                                   '</div>' +
                                   '<div class="caption"> ' +
-                                  '<h3>' + hotel.name + '</h3> ' +
+                                  '<p style="font-weight:bold; font-size:30px">' + hotel.name + '</p> ' +
                                   '<p>' + "Rating: " +  hotel.rating + '</p>' +
                                   '<p>' + hotel.vicinity + '</p> ' +
                                   '</div> ' +
